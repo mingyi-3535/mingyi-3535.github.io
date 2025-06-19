@@ -1,6 +1,6 @@
 +++
 date = '2025-06-18T20:44:48+08:00'
-draft = false
+draft = true
 title = '娶群友'
 description="分享一下自己写yunzaiQQBOT插件的思路。"
 tags=[
@@ -45,12 +45,12 @@ const imgUrl = await e.member?.getAvatarUrl?.() || await e.friend?.getAvatarUrl?
    <span style="color: blue; font-weight: bold;">B:</span>
    <span> 既然可以用QQ号那为什么不能直接用tx给的用户id去获取头像呢?方便快捷,使用QQ号的话获取很麻烦哎?(tx不允许获取用户个人信息,把id换成了一串乱码)</span>
 </div>
-    
+
 <div>
    <span style="color: red; font-weight: bold;">A:</span>
    <span> 因为tx给的id直接填进去是无效的,填进去后获取的依然只能是自己的头像</span>
 </div>
-    
+
 <div>
    <span style="color: red; font-weight: bold;">A:</span>
    <span> 嗯……tx给的id虽然可以实现但是也仅限有按钮权限的QQBOT</span>
