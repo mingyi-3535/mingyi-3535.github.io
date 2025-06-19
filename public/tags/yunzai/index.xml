@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Yunzai on 茗亿的博客</title>
+        <link>https://mingyi-3535.github.io/tags/yunzai/</link>
+        <description>Recent content in Yunzai on 茗亿的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>茗亿</copyright>
+        <lastBuildDate>Wed, 18 Jun 2025 20:44:48 +0800</lastBuildDate><atom:link href="https://mingyi-3535.github.io/tags/yunzai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>娶群友</title>
+        <link>https://mingyi-3535.github.io/p/%E5%A8%B6%E7%BE%A4%E5%8F%8B/</link>
+        <pubDate>Wed, 18 Jun 2025 20:44:48 +0800</pubDate>
+        
+        <guid>https://mingyi-3535.github.io/p/%E5%A8%B6%E7%BE%A4%E5%8F%8B/</guid>
+        <description>&lt;img src="https://mingyi-3535.github.io/p/%E5%A8%B6%E7%BE%A4%E5%8F%8B/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A3%81%E7%BA%B8.png" alt="Featured image of post 娶群友" /&gt;&lt;p&gt;本文提供了关于yunzaiQQBOT娶群友开发思路，适用于普通QQbot无按钮&lt;br&gt;
+注:仅供参考,仅适用于有一点JavaScript基础的人看&lt;/p&gt;
+&lt;!-- more--&gt;
+&lt;h2 id=&#34;娶群友到底是什么逻辑&#34;&gt;娶群友到底是什么逻辑？
+&lt;/h2&gt;&lt;h3 id=&#34;获取单个用户头像&#34;&gt;获取单个用户头像
+&lt;/h3&gt;&lt;p&gt;他的逻辑只是单纯靠一个固定获取头像的链接,例如我常用的:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;imgUrl&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;member&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getAvatarUrl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;friend&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getAvatarUrl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;`&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;q2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;qlogo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;headimg_dl&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dst_uin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;spec&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;中间的e.user_id是用户的(此id并非QQid)id/QQ号，记住这个东西，获取用户头像的时候需要这个，我们只需要获取到用户QQ号把QQ号填入到这个括号内把{e.user_id}替换成{QQ号}这样就可以获取到&lt;em&gt;&lt;strong&gt;一个用户&lt;/strong&gt;&lt;/em&gt; 的QQ头像√，随后bot输出你今天的老婆是***[图片]看好他哦…………&lt;/p&gt;
+&lt;h3 id=&#34;id绑定&#34;&gt;id绑定
+&lt;/h3&gt;&lt;p&gt;随后把用户id和随机取到的另一个用户id进行存入绑定，用什么绑定都可以数据库,JSON什么的都行，如果同样的人再次发送娶群友命令，则检测他的id是否存在于数据库或者JSON文件等如果存在就告诉他你已经有老婆了什么巴拉巴拉~，不存在就随机抽一个群友呗&lt;/p&gt;
+&lt;h3 id=&#34;如何获取多个用户的头像呢&#34;&gt;如何获取多个用户的头像呢？
+&lt;/h3&gt;&lt;p&gt;很简单将全部id塞进去就刑惹~&lt;br&gt;
+但是我们要怎么获取到用户的id呢？因为是QQBOT(&lt;strong&gt;无按钮&lt;/strong&gt;)的原因我们可以用用户的QQ号去获取头像，哎?!突然有个人问:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;B:既然可以用QQ号那为什么不能直接用tx给的用户id去获取头像呢?方便快捷,使用QQ号
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;只能让用户输入QQ号,QQBOT没办法直接获取口牙?
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;A:因为tx给的id直接填进去是无效的,填进去后获取的依然只能是自己的头像
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;A:嗯……tx给的id虽然可以实现但是也仅限有按钮权限的QQBOT
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
