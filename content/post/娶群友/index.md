@@ -1,6 +1,6 @@
 +++
 date = '2025-06-18T20:44:48+08:00'
-draft = true
+draft = false
 title = '娶群友'
 description="分享一下自己写yunzaiQQBOT插件的思路。"
 tags=[

@@ -6,7 +6,32 @@
         <description>Recent content in Categories on 茗亿的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>茗亿</copyright><atom:link href="https://mingyi-3535.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>茗亿</copyright>
+        <lastBuildDate>Wed, 18 Jun 2025 20:44:48 +0800</lastBuildDate><atom:link href="https://mingyi-3535.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>QQBOT</title>
+        <link>https://mingyi-3535.github.io/categories/qqbot/</link>
+        <pubDate>Wed, 18 Jun 2025 20:44:48 +0800</pubDate>
+        
+        <guid>https://mingyi-3535.github.io/categories/qqbot/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>娶群友</title>
+        <link>https://mingyi-3535.github.io/categories/%E5%A8%B6%E7%BE%A4%E5%8F%8B/</link>
+        <pubDate>Wed, 18 Jun 2025 20:44:48 +0800</pubDate>
+        
+        <guid>https://mingyi-3535.github.io/categories/%E5%A8%B6%E7%BE%A4%E5%8F%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>思路分享</title>
+        <link>https://mingyi-3535.github.io/categories/%E6%80%9D%E8%B7%AF%E5%88%86%E4%BA%AB/</link>
+        <pubDate>Wed, 18 Jun 2025 20:44:48 +0800</pubDate>
+        
+        <guid>https://mingyi-3535.github.io/categories/%E6%80%9D%E8%B7%AF%E5%88%86%E4%BA%AB/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Test</title>
         <link>https://mingyi-3535.github.io/categories/test/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
